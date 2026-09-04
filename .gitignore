@@ -60,6 +60,5 @@ build/
 *.sqlite3
 
 # Agent Planning & Scratch Documents
-implementation_plan.md
 walkthrough.md
 scratch/
