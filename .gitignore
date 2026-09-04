@@ -1,28 +1,65 @@
-# Virtual Environment
+# ==============================================================================
+# Git Ignore Configuration for AI Engineer Guide
+# ==============================================================================
+
+# Virtual Environments
 .venv/
 venv/
 ENV/
 env/
+env.bak/
+venv.bak/
 
-# Python cache & bytecode
+# Python Bytecode, Compiles & Caches
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
 
-# Environment variables & secrets
+# Environment Variables & Secrets (NEVER push API keys)
 .env
-*.env.local
-*.key
+*.env
+*.env.*
+!.env.example
 *.pem
+*.key
+*token*
+*credential*
 
-# IDE & OS
+# Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# IDE & Editor Configurations
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
-# Distribution / packaging
+# Jupyter Notebooks & Data Caches
+.ipynb_checkpoints/
+
+# Distribution & Build
 dist/
 build/
 *.egg-info/
+
+# Local databases & logs
+*.log
+*.sqlite3
+
+# Agent Planning & Scratch Documents
+implementation_plan.md
+walkthrough.md
+scratch/
