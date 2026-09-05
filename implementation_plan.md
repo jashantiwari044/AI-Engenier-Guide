@@ -56,9 +56,9 @@ graph TD
 
 ---
 
-## Phase 1: Python + AI Foundations
-**📁 Folder:** `01-python-ai-foundations/`
-**⏱️ Duration:** 3-4 days
+## Phase 1: Python + AI Foundations [COMPLETED ✅]
+**📁 Folder:** `01-python-ai-foundations/`  
+**Status:** Completed & Fully Tested (9/9 Pytest Passing)  
 **🎯 Goal:** Solid Python skills specifically needed for AI engineering
 
 ### What You'll Learn
@@ -87,9 +87,9 @@ Build a Python toolkit that:
 
 ---
 
-## Phase 2: LLM APIs & Prompt Engineering
-**📁 Folder:** `02-llm-apis-prompt-engineering/`
-**⏱️ Duration:** 4-5 days
+## Phase 2: LLM APIs & Prompt Engineering [COMPLETED ✅]
+**📁 Folder:** `02-llm-apis-prompt-engineering/`  
+**Status:** Completed & Fully Tested (11/11 Pytest Passing)  
 **🎯 Goal:** Master direct LLM API usage and prompt engineering techniques
 
 ### What You'll Learn
@@ -97,34 +97,36 @@ Build a Python toolkit that:
 - Temperature, top_p, max_tokens — what they do and when to tune them
 - System prompts, few-shot prompting, chain-of-thought
 - Structured output with JSON mode and function calling
-- Token counting and cost optimization
-- Streaming responses
-- Anthropic and Google Gemini APIs (multi-provider skills)
+- Token counting and cost optimization with `tiktoken`
+- Streaming responses via Server-Sent Events (SSE)
+- Multi-provider architecture (OpenAI, Anthropic Claude, Gemini, Mock)
 
-### 🔨 Project: "Smart Content Generator"
+### 🔨 Project: "Smart Content Generator & Prompt Lab"
 Build a CLI tool that:
-- Takes a topic and generates blog posts using OpenAI API
-- Uses system prompts for different writing styles (professional, casual, technical)
-- Implements few-shot prompting with examples
-- Returns structured JSON output (title, sections, summary, tags)
-- Streams the response in real-time to the terminal
-- Tracks token usage and estimated cost
-- Supports switching between OpenAI / Anthropic / Gemini
+- Takes a topic and generates articles using LLM APIs
+- Uses system prompts for different writing styles (technical lead, friendly teacher, executive)
+- Implements few-shot prompting with structured exemplars
+- Returns structured JSON output (`GeneratedArticle` with sections, summary, tags, SEO)
+- Streams the response in real-time to the terminal with live cost calculations
+- Tracks token usage and estimated cost across 6 frontier models
+- Supports switching between OpenAI / Anthropic / Gemini / Mock
 
 ### Key Libraries
 | Library | Why You Need It |
 |---|---|
-| `openai` | Official OpenAI Python SDK |
-| `anthropic` | Anthropic Claude SDK |
+| `openai` | Official OpenAI Python SDK (AsyncOpenAI, parse) |
+| `anthropic` | Anthropic Claude SDK (messages, stream) |
 | `google-genai` | Google Gemini SDK |
-| `tiktoken` | Token counting for OpenAI models |
+| `tiktoken` | BPE Token counting for OpenAI models |
+| `pydantic` | Data validation and schema enforcement |
+| `rich` | Terminal formatting and tables |
 
 ### Prompt Engineering Techniques Covered
-1. **Zero-shot** — Direct instruction, no examples
-2. **Few-shot** — Provide examples to guide output
-3. **Chain-of-Thought (CoT)** — "Think step by step"
-4. **ReAct** — Reasoning + Acting pattern
-5. **Structured Output** — Force JSON/schema compliance
+1. **Zero-shot** — Direct instruction with structural delimiters
+2. **Few-shot** — In-context exemplar pattern steering
+3. **Chain-of-Thought (CoT)** — Explicit reasoning scratchpad (`<thinking>`, `<final_answer>`)
+4. **Persona Conditioning** — Role and domain constraint steering
+5. **Structured Outputs** — Native constrained decoding to Pydantic schema
 
 ---
 
